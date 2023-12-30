@@ -1,7 +1,8 @@
-import express from "express";
-import cors from "cors";
-import authMW from "./middlewares/authMW";
-import connectDB from "./utils/db";
+const express = require("express");
+const cors = require("cors");
+const authMW = require("./middlewares/authMW");
+const connectDB = require("./utils/db");
+require("dotenv").config();
 
 const app = express();
 const port = process.env.PORT || 8000;
@@ -18,10 +19,10 @@ app.use(express.json());
 app.use(cors(corsOptions));
 
 // connect to database
-connectDB(process.env.MONGODB_URI);
+connectDB();
 
 // base routes
-app.use("/inventory", authMW, require("./routes/inventoryRoutes"));
+app.use("/inventory", require("./routes/inventoryRoutes"));
 
 // start the server
 app.listen(port, () => {

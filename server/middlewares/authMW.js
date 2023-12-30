@@ -4,4 +4,4 @@ const authMW = (v) => {
   };
 };
 
-export default authMW;
+module.exports = authMW;

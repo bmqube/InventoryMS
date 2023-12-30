@@ -1,13 +1,26 @@
+const Inventory = require("../models/Inventory");
 // GET /api/inventory
 const getAllInventory = async (req, res) => {
   try {
     // Retrive all inventory items from the database
     let allInventoryItems = await Inventory.find();
 
+    let listOfItems = allInventoryItems.map((item) => {
+      return {
+        id: item._id,
+        name: item.name,
+        description: item.description,
+        quantity: item.quantity,
+        cost: item.cost,
+        belowThreshold:
+          item.quantity < process.env.REORDER_POINT ? true : false,
+      };
+    });
+
     // Send the response
     res.status(200).json({
       message: "Successfully retrieved all inventory items",
-      data: allInventoryItems,
+      data: listOfItems,
     });
   } catch (error) {
     // Send the error response
