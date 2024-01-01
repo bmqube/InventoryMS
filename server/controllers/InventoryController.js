@@ -1,4 +1,5 @@
 const Inventory = require("../models/Inventory");
+
 // GET /api/inventory
 const getAllInventory = async (req, res) => {
   try {
@@ -26,6 +27,27 @@ const getAllInventory = async (req, res) => {
     // Send the error response
     res.status(500).json({
       message: "Error retrieving all inventory items",
+      error: error.message,
+    });
+  }
+};
+
+// GET /api/inventory/:id
+const getInventoryById = async (req, res) => {
+  const { id } = req.params;
+  try {
+    // Retrieve a single inventory item from the database
+    let inventoryItem = await Inventory.findById(id);
+
+    // Send the response
+    res.status(200).json({
+      message: `Successfully retrieved inventory item with ID ${id}`,
+      data: inventoryItem,
+    });
+  } catch (error) {
+    // Send the error response
+    res.status(500).json({
+      message: `Error retrieving inventory item with ID ${id}`,
       error: error.message,
     });
   }
@@ -116,9 +138,37 @@ const deleteInventory = async (req, res) => {
   }
 };
 
+const restockInventory = async (req, res) => {
+  const { id } = req.params;
+  const { quantity } = req.body;
+
+  console.log(id, quantity);
+  try {
+    let inventoryItem = await Inventory.findById(id);
+
+    inventoryItem.quantity += Number(quantity);
+
+    await inventoryItem.save();
+
+    // Send the response
+    res.status(200).json({
+      message: `Successfully restocked inventory item with ID ${id}`,
+      data: inventoryItem,
+    });
+  } catch (error) {
+    // Send the error response
+    res.status(500).json({
+      message: `Error restocking inventory item with ID ${id}`,
+      error: error.message,
+    });
+  }
+};
+
 module.exports = {
   getAllInventory,
+  getInventoryById,
   createInventory,
   updateInventory,
   deleteInventory,
+  restockInventory,
 };
