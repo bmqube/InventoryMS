@@ -2,6 +2,16 @@
 
 The X-Fashion Inventory System is an easy-to-use tool that helps fashion businesses keep track of their stock. It shows how many items you have, their worth in market, and what you need to order. It's designed to work well with other systems, and it's built with up-to-date technology, so it can handle your business as it grows. The system is split into two parts - the part you interact with (frontend) and the part that works in the background (backend), making it easier to manage and fix if needed.
 
+## System Requirements
+
+For this project, you will need the following installed on your system:
+
+- Node.js: Node.js is a JavaScript runtime that allows you to run JavaScript on your server. You can download Node.js from the [official website](https://nodejs.org/).
+
+- MongoDB: MongoDB is a NoSQL database that provides high performance, high availability, and easy scalability. You can download MongoDB from the [official website](https://www.mongodb.com/).
+
+Please ensure that you have these installed before proceeding with the installation of the X-Fashion Inventory System.
+
 ## Installation
 
 To get started with PostHub, follow these steps:
