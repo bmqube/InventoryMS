@@ -142,7 +142,6 @@ const restockInventory = async (req, res) => {
   const { id } = req.params;
   const { quantity } = req.body;
 
-  console.log(id, quantity);
   try {
     let inventoryItem = await Inventory.findById(id);
 
