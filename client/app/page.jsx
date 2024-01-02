@@ -46,7 +46,7 @@ export default function Home() {
   const handleRestock = async () => {
     let restockProductUrl = `http://localhost:8000/inventory/restock/${isRestocking}`;
     try {
-      if (isRestocking && restockQuantity) {
+      if (isRestocking && restockQuantity > 0) {
         const response = await axios.put(restockProductUrl, {
           quantity: restockQuantity,
         });
@@ -184,7 +184,7 @@ export default function Home() {
                                 onChange={(e) => {
                                   setRestockQuantity(e.target.value);
                                 }}
-                                style={{ maxWidth: "80px" }}
+                                style={{ maxWidth: "80px", minWidth: "60px" }}
                               />
 
                               <button
