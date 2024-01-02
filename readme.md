@@ -20,28 +20,24 @@ To get started with IMS, follow these steps:
 
    ```bash
    git clone https://github.com/bmqube/inventory-ms.git
-
    ```
 
 2. **Navigate to the client folder (frontend):**
 
    ```bash
    cd inventory-ms/client
-
    ```
 
 3. **Install dependencies:**
 
    ```bash
    npm install
-
    ```
 
 4. **Navigate to the server folder (backend):**
 
    ```bash
    cd ../server
-
    ```
 
 5. **Install server dependencies:**
@@ -53,14 +49,22 @@ To get started with IMS, follow these steps:
 
 ## Usage
 
+0. **Prerequisites**
+
+   Before proceeding, please complete the following steps:
+
+   - Open the `.env example` file in the `server` folder.
+   - Fill in the values as needed.
+   - Rename the file to `.env`
+
 1. **Run the backend:**
 
    ```bash
+   cd server
    npm start
-
    ```
 
-Your backend server should be running on http://localhost:8000.
+   Your backend server should be running on http://localhost:8000.
 
 2. **Run the frontend:**
 
@@ -68,16 +72,15 @@ Your backend server should be running on http://localhost:8000.
    cd ../client
    npm run build
    npm start
-
    ```
 
-Open your browser and visit http://localhost:3000 to see the frontend in action.
+   Open your browser and visit http://localhost:3000 to see the frontend in action.
 
 <br>
 
 ## Tech Stack
 
-- Frontend: Next.js
+- Frontend: Next.js, Bootstrap
 - Backend: Express.js
 - DBMS: MongoDB
-- Others: Nodemailer
+- Others: Nodemailer, Axios

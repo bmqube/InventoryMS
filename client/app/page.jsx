@@ -17,7 +17,7 @@ export default function Home() {
 
   useEffect(() => {
     async function fetchProducts() {
-      let getProductsUrl = "http://localhost:8000/inventory/";
+      let getProductsUrl = "http://localhost:8000/inventory";
       try {
         const response = await axios.get(getProductsUrl);
         setProducts(response.data.data);
@@ -34,7 +34,6 @@ export default function Home() {
     try {
       if (productId) {
         const response = await axios.delete(deleteProductUrl);
-        console.log(response.data);
         setTriggerGetProducts(!triggerGetProducts);
       }
     } catch (error) {

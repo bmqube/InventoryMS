@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const connectDB = require("./utils/db");
+const seedData = require("./utils/seedScript");
 require("dotenv").config();
 
 const app = express();
@@ -19,6 +20,9 @@ app.use(cors(corsOptions));
 
 // connect to database
 connectDB();
+
+// seed the database
+seedData();
 
 // base routes
 app.use("/inventory", require("./routes/inventoryRoutes"));
