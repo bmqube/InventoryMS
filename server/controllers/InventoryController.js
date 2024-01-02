@@ -1,4 +1,5 @@
-const Inventory = require("../models/Inventory");
+const Inventory = require("../models/Inventory"); // mongoose model
+const sendEmail = require("../utils/mailer"); // nodemailer function
 
 // GET /api/inventory
 const getAllInventory = async (req, res) => {
@@ -6,6 +7,7 @@ const getAllInventory = async (req, res) => {
     // Retrive all inventory items from the database
     let allInventoryItems = await Inventory.find();
 
+    // Map the data to the format we want (remove the __v and _id fields, and add a threshold check field)
     let listOfItems = allInventoryItems.map((item) => {
       return {
         id: item._id,
@@ -143,11 +145,15 @@ const restockInventory = async (req, res) => {
   const { quantity } = req.body;
 
   try {
+    // Logic to restock an inventory item in the database
     let inventoryItem = await Inventory.findById(id);
 
     inventoryItem.quantity += Number(quantity);
 
     await inventoryItem.save();
+
+    // Send an email to the owner
+    await sendEmail(process.env.OWNER_EMAIL, inventoryItem);
 
     // Send the response
     res.status(200).json({

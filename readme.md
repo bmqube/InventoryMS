@@ -1,6 +1,6 @@
-# X-Fashion Inventory System
+# IMS - Inventory Management System
 
-The X-Fashion Inventory System is an easy-to-use tool that helps fashion businesses keep track of their stock. It shows how many items you have, their worth in market, and what you need to order. It's designed to work well with other systems, and it's built with up-to-date technology, so it can handle your business as it grows. The system is split into two parts - the part you interact with (frontend) and the part that works in the background (backend), making it easier to manage and fix if needed.
+The IMS is an easy-to-use tool that helps fashion businesses keep track of their stock. It shows how many items you have, their worth in market, and what you need to order. It's designed to work well with other systems, and it's built with up-to-date technology, so it can handle your business as it grows. The system is split into two parts - the part you interact with (frontend) and the part that works in the background (backend), making it easier to manage and fix if needed.
 
 ## System Requirements
 
@@ -10,23 +10,23 @@ For this project, you will need the following installed on your system:
 
 - MongoDB: MongoDB is a NoSQL database that provides high performance, high availability, and easy scalability. You can download MongoDB from the [official website](https://www.mongodb.com/).
 
-Please ensure that you have these installed before proceeding with the installation of the X-Fashion Inventory System.
+Please ensure that you have these installed before proceeding with the installation of the IMS.
 
 ## Installation
 
-To get started with PostHub, follow these steps:
+To get started with IMS, follow these steps:
 
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/bmqube/x-fashion.git
+   git clone https://github.com/bmqube/inventory-ms.git
 
    ```
 
 2. **Navigate to the client folder (frontend):**
 
    ```bash
-   cd x-fashion/client
+   cd inventory-ms/client
 
    ```
 
@@ -80,3 +80,4 @@ Open your browser and visit http://localhost:3000 to see the frontend in action.
 - Frontend: Next.js
 - Backend: Express.js
 - DBMS: MongoDB
+- Others: Nodemailer

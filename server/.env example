@@ -1,0 +1,15 @@
+# General config
+REORDER_POINT=10        
+
+# Database config
+MONGODB_URI=
+
+# Mailer config
+CLIENT_ID=
+CLIENT_SECRET=
+REFRESH_TOKEN=
+REDIRECT_URI=
+SENDER_EMAIL=
+
+# Owner config
+OWNER_EMAIL=
