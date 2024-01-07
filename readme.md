@@ -19,13 +19,13 @@ To get started with IMS, follow these steps:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/bmqube/inventory-ms.git
+   git clone https://github.com/bmqube/InventoryMS.git
    ```
 
 2. **Navigate to the client folder (frontend):**
 
    ```bash
-   cd inventory-ms/client
+   cd InventoryMS/client
    ```
 
 3. **Install dependencies:**
